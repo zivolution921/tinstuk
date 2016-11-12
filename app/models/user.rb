@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
 
 	def self.create_user_from_facebook(auth)
 		create(
-
 		avatar: process_uri(auth['info']['image'] + "?width=9999"),
 		email: auth['info']['email'],
 		provider: auth['provider'],

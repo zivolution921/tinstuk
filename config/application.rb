@@ -11,10 +11,11 @@ module Tinstuk
 
     config.paperclip_defaults = {
       :storage => :s3,
+      :s3_region => "us-east-1",
       :s3_credentials => { 
-         :bucket => ENV['AWS_BUCKET'],
-         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+         :bucket => "dating4cause",
+         :access_key_id => "AKIAI6FGTSAAFSQZ4KMA",
+         :secret_access_key => "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"
       }
     }
           
