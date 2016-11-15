@@ -11,11 +11,12 @@ module Tinstuk
 
     config.paperclip_defaults = {
       :storage => :s3,
-      :s3_region => "us-east-1",
+      :s3_host_name => "s3-us-west-2.amazonaws.com",
+      :s3_region => "us-west-2",
       :s3_credentials => { 
-         :bucket => "dating4cause",
-         :access_key_id => "AKIAI6FGTSAAFSQZ4KMA",
-         :secret_access_key => "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"
+         :bucket => "new-dating-app-testing",         
+         :access_key_id => "AKIAIUBHKZ6TD26XDPXQ",
+         :secret_access_key => "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"
       }
     }
           

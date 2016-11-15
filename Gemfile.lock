@@ -217,7 +217,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  aws-sdk (~> 2)
+  aws-sdk
   bootstrap-sass
   byebug
   cancan

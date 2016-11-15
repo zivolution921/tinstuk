@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
 		date_of_birth: auth['extra']['raw_info']['birthday'],
 		location: auth['info']['location'],
 		bio: auth['extra']['raw_info']['bio']
-
-
 		)
 	end
 
