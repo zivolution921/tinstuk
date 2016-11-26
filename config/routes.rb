@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :registrations
   root 'home#index'
+
+  resources :events do 
+    resources :registrations
+  end
+
   
   resources :users do
     member do
