@@ -1,6 +1,7 @@
 class Registration < ApplicationRecord
-  
-  validates :name, presence: true
+  belongs_to :event
+  belongs_to :user
+ 
 
   HOW_HEARD_OPTIONS = [ 
     'Newsletter',
@@ -11,5 +12,5 @@ class Registration < ApplicationRecord
     'Other'
   ]
 
-  belongs_to :event
+  
 end

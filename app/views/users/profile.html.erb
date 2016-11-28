@@ -4,6 +4,16 @@
 			<div class="img">
 				<%= image_tag @user.avatar, width: "100%", height: "100%" %>
 			</div>
+			<div>
+				<p>Registered For</p>
+				<ul style="list-style: none;">
+					<% @registrations.each do |registration| %>
+						<li>
+							<%= link_to registration.event.name, registration.event %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
 			<div class="user-name pull-left"><a href=""><b><%= name(@user) %></b>, <%= age(@user) %></a></div>
 			<div class="user-location text-right"><i class="fa fa-map-marker"></i> <%= location(@user) %></div>
 			<div class="description">

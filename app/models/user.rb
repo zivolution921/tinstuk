@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+	
+	has_many :registrations, dependent: :destroy
 	has_many :friendships, dependent: :destroy
 	has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
 

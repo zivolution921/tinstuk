@@ -1,5 +1,4 @@
 @import "variables";
-@import "normalize";
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import "bootstrap-social";
@@ -11,8 +10,6 @@
 @import "styles";
 @import "tools";
 @import "sweetalert";
-
-
-
-
-
+@import "events";
+@import "forms";
+@import "elements";

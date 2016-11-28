@@ -11,8 +11,17 @@
 
 <%= render 'layouts/header' %>
 
-<%= yield %>
+<div id="wrapper">
 
+  <%= render "layouts/flashes"  %>
+
+  <div id="container">
+    <section id="content">
+      <%= yield %>
+    </section>
+  </div>
+
+</div>
 
 <script type="text/javascript">
 
@@ -38,6 +47,9 @@
 	$('.actions .like, .actions .dislike').click(function(e){
 		e.preventDefault();
 		$("#tinderslide").jTinder($(this).attr('class'));
+		if($("#tinderslide > ul li").length <= 1){
+			$("#containerTinder").html("<h2>There is no current user</h2>");
+		}
 	});
 
 	$(".nav-btn").hover(function(){

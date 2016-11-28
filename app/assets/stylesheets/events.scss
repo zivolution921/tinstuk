@@ -1,5 +1,4 @@
-@import "colors";
-
+@import "variables";
 /* EVENTS */
 
 article#event {
@@ -19,7 +18,7 @@ article#event {
     padding-bottom: .5em;
     margin: 1em 0;
     font-size: 120%;
-    border-bottom: 1px solid $subdued-color;
+    
 
     &.no-rule {
       border: none;

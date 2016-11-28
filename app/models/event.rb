@@ -15,7 +15,11 @@ class Event < ApplicationRecord
   end
 
   def spots_left
-    capacity - registrations.size
+    if capacity.nil?
+      0
+    else
+      capacity - registrations.size
+    end
   end
 
   def sold_out?

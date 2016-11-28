@@ -1,5 +1,22 @@
+<aside id="sidebar">
+  <nav>
+    <ul style="none"> 
+      <li class="upcoming-events">
+        <%= link_to "All Events", events_path, class: 'button' %>
+      </li>
+     
+        <li class="create-event">
+        <!-- triggering to new action path -->
+          <%= link_to 'Add New Event', new_event_path, class: 'button' %>
+        </li>
+    
+    </ul>
+  </nav>
+</aside>
+
+
 <ul id="events">
-  <%= link_to "Add New Event", new_event_path %>
+ 
   <% @events.each do |event| %>
     <li>
       <article class="event" id="<%= dom_id(event) %>">
@@ -13,15 +30,15 @@
         </p>
         <table>
           <tr>
-            <th>When:</th>
+            <th>When</th>
             <td><%= event.starts_at %></td>
           </tr>
           <tr>
-            <th>Where:</th>
+            <th>Where</th>
             <td><%= event.location %></td>
           </tr>
           <tr>
-            <th>Price:</th>
+            <th>Price</th>
             <td><%= format_price(event) %></td>
           </tr>
         </table>

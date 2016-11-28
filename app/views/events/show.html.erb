@@ -1,43 +1,48 @@
+<aside id="sidebar">
+  <nav>
+    <ul>  
+      <li class="upcoming-events">
+        <%= link_to "All Events", events_path, class: 'button' %>
+      </li>
+     
+        <li class="create-event">
+        <!-- triggering to new action path -->
+          <%= link_to 'Add New Event', new_event_path, class: 'button' %>
+        </li>
+    
+    </ul>
+  </nav>
+</aside>
+
 <article id="event" class="event">
   <header>
     <%= image_for(@event) %>
     <h1><%= @event.name %></h1>
+    <h2><%= @event.starts_at %></h2>
   </header>
   <p>
-    <%= @event.description %>
+    Description: <%= @event.description %>
   </p>
-  <h3>When</h3>
-  <p>
-    <%= @event.starts_at %>
-  </p>
-  <h3>Where</h3>
-  <p>
-    <%= @event.location %>
-  </p>
-  <h3>Price</h3>
-  <p>
-    <%= format_price(@event) %>
-  </p>
-  <h3>Location</h3>
-  <p>
-    <%= @event.location %>
-  </p>
-  <h3>Capacity</h3>
-  <p>
-    <%= pluralize(@event.spots_left, "spot") %> available
-  </p>
+  <p>When: <%= @event.starts_at %></p>
+ 
+  <p>Where:  <%= @event.location %></p>
+  
+  <p>Price: <%= format_price(@event) %></hp>
+ 
+  <p>Location:  <%= @event.location %></p>
+ 
+  <p>Capacity:  <%= pluralize(@event.capacity, "spot") %> available</p>
+ 
 
+  
+    <%= link_to pluralize(@event.registrations.size, 'registration'), 
+                event_registrations_path(@event) %>
+  <footer>
+    <%= register_link(@event) %>
+
+    <nav>
+      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
+    </nav>
+  </footer>
 </article>
-
-<h3>Registrations</h3>
-  <%= link_to pluralize(@event.registrations.size, 'registration'), 
-              event_registrations_path(@event) %>
-<footer>
-  <%= register_link(@event) %>
-
-  <nav>
-    <%= link_to "All Events", events_path %> |
-    <%= link_to 'Edit', edit_event_path(@event) %> |
-    <%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
-  </nav>
-</footer>

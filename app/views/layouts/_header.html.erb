@@ -5,8 +5,8 @@
         <%= link_to root_path do %><i class="fa fa-users"></i> Discover <% end %>
       </li>
 
-      <li class="<%= if params[:action] == "matches" then "active" end %> nav-btn">
-        <%= link_to matches_user_path(current_user) do %><i class="fa fa-heart"></i> Matches <% end %>
+       <li class="<%= if params[:action] == "users" then "active" end %> nav-btn">
+        <%= link_to profile_user_path(current_user) do %><i class="fa fa-user"></i> Profile <% end %>
       </li>
       <!-- Added link to events in the navbar -->
       <li class="<%= if params[:action] == "events" then "active" end %> nav-btn">

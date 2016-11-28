@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @registrations = @user.registrations
   end
 
   def matches
